@@ -10,15 +10,25 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="static/banner.jpg">
     <div class="container">
       <h1  class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-      <img class="img-fluid" id="banner" src="https://3bb363fa-13b3-4a9a-b3b2-eb954e79f152-00-1w796f9nly5x5.janeway.replit.dev/static/banner.jpg">
-      <h2  class="text-center mt-2 mb-4">About Jovian</h2>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente eum repellendus atque cumque nulla, distinctio illo, facilis explicabo ipsum animi sed. Animi repellat nesciunt magni molestiae. Molestiae doloremque perferendis culpa.</p>
+      <div class="row" style="margin-bottom:16px">
+        <div class="col-md-6">
+          <h2  class="text-center mt-2 mb-4">About Jovian</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente eum repellendus atque cumque nulla, distinctio illo, facilis explicabo ipsum animi sed. Animi repellat nesciunt magni molestiae. Molestiae doloremque perferendis culpa.</p>
+        </div>
+        <div class="d-none d-md-block col-6">
+          <img src="static/people.jpg" style="height:320px; border-radius:4px" alt="">
+        </div>
+        </div>
+      </div>
       <h2  class="text-center mt-2 mb-4">Job Openings</h2>
       <p>
         {% for job in jobs %}
@@ -27,9 +37,9 @@
         
       </p>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2022, Jovian</p>
+        <a href="mailto:hello@jovian.ai?subject=Question%20about%20Job%20Openings&body=My%20Name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20Question%3A%20%3Center%20question%20here%3E" class="btn btn-primary btn-lg">Contact Us</a>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
